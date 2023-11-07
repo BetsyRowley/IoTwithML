@@ -6,3 +6,5 @@ SEIS744-01 IoT with Machine Learning
 * Week 5 Assignment
   * Chapter 6: Arduino Hello World Example
   * Chapter 7: Micro Speech Example
+* Week 8 Assignment
+  * Tiny ML Chapter 9: Person Detection (Harvard_TinyML)
