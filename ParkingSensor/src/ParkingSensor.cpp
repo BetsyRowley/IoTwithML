@@ -2,7 +2,7 @@
 #include "Grove-Ultrasonic-Ranger.h"             // Ultrasonic Ranger library
 
 float distance2 = 50.0;             // far range boundary
-float distance1 = 20.0;             // close range boundary
+float distance1 = 10.16;             // close range boundary
 
 Ultrasonic ultrasonic(D4);          // Ultrasonic object constructor
 ChainableLED leds(D2, D3, 1);       // LED object constructor
