@@ -1,3 +1,22 @@
+# Betsy's Working Version
+
+Out of Range
+
+![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/644fde0d-689d-4c25-8365-5654089602df)
+
+Getting Closer
+
+![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/72a50148-8842-402f-a87b-eee19aa533c0)
+
+Too Close!
+
+![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/ffe1fd22-12cb-4517-82b6-3ff479cea210)
+
+Event Published
+
+![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/1daea123-09f9-405d-80d5-b782cda083e2)
+
+
 # ParkingSensor
 
 This firmware project was created using [Particle Developer Tools](https://www.particle.io/developer-tools/) and is compatible with all [Particle Devices](https://www.particle.io/devices/).
