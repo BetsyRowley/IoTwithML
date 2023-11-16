@@ -9,4 +9,6 @@ SEIS744-01 IoT with Machine Learning
 * Week 8 Assignment
   * Tiny ML Chapter 9: Person Detection (Harvard_TinyML)
 * Week 8 Independent Lab
-  * Particle Project Examples
+  * Particle Project Examples (FirstProject, ChainableLED, PubSubLight)
+* Week 9 Particle Challenges
+  * Parking Sensor
