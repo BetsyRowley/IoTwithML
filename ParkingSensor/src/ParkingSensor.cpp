@@ -29,6 +29,7 @@ void loop()
 	}
 	else if (RangeInCentimeters < distance1) {                  // too close...
 	    leds.setColorRGB(0, 255, 0, 0);                         // red
+      	Particle.publish("car-is-parked", String(RangeInCentimeters), PRIVATE);
 	}
 	
 	delay(100);                     // small delay, so the sensor has some time to do it's thing
