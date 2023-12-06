@@ -32,5 +32,5 @@ void loop()
       	Particle.publish("car-is-parked", String(RangeInCentimeters), PRIVATE);
 	}
 	
-	delay(100);                     // small delay, so the sensor has some time to do it's thing
+	delay(1000);                     // small delay, so the sensor has some time to do it's thing
 }
