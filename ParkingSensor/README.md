@@ -16,6 +16,12 @@ Event Published
 
 ![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/1daea123-09f9-405d-80d5-b782cda083e2)
 
+Twilo Integration
+
+![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/cb979d6a-e57d-4019-9eb4-cb743cdd5132)
+
+![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/b2b897b7-32cd-4498-9974-54f76d31245f)
+
 
 # ParkingSensor
 
