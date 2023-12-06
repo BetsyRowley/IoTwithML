@@ -12,3 +12,5 @@ SEIS744-01 IoT with Machine Learning
   * Particle Project Examples (FirstProject, ChainableLED, PubSubLight)
 * Week 9 Particle Challenges
   * Parking Sensor
+* Week 10 Particle & ThingSpeak
+  * TempWebhook (https://docs.particle.io/integrations/webhooks/#how-webhooks-work)
