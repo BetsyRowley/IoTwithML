@@ -14,3 +14,5 @@ SEIS744-01 IoT with Machine Learning
   * Parking Sensor
 * Week 10 Particle & ThingSpeak
   * TempWebhook (https://docs.particle.io/integrations/webhooks/#how-webhooks-work)
+* Final Project
+  * Animal Track Identifier using Edge Impulse & Arduino Nano BLE Sense Lite
