@@ -27,6 +27,13 @@
 
 #define DWORD_ALIGN_PTR(a)   ((a & 0x3) ?(((uintptr_t)a + 0x4) & ~(uintptr_t)0x3) : a)
 
+//Define LED Lights
+#define RED 22     
+#define BLUE 24     
+#define GREEN 23
+#define LED_PWR 25
+#define LED_BUILTIN 13
+
 /*
  ** NOTE: If you run into TFLite arena allocation issue.
  **
@@ -130,16 +137,26 @@ void cropImage(int srcWidth, int srcHeight, uint8_t *srcImage, int startX, int s
 void setup()
 {
     // put your setup code here, to run once:
+
+    // initialize digital LEDs as outputs.
+    pinMode(RED, OUTPUT);
+    //pinMode(BLUE, OUTPUT);
+    pinMode(GREEN, OUTPUT);
+    //pinMode(LED_PWR, OUTPUT);
+    pinMode(LED_BUILTIN, OUTPUT);
+
     Serial.begin(115200);
     // comment out the below line to cancel the wait for USB connection (needed for native USB)
     while (!Serial);
-    Serial.println("Edge Impulse Inferencing Demo");
+    Serial.println("Animal Track Identifier Demo");
 
     // summary of inferencing settings (from model_metadata.h)
     ei_printf("Inferencing settings:\n");
     ei_printf("\tImage resolution: %dx%d\n", EI_CLASSIFIER_INPUT_WIDTH, EI_CLASSIFIER_INPUT_HEIGHT);
     ei_printf("\tFrame size: %d\n", EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE);
     ei_printf("\tNo. of classes: %d\n", sizeof(ei_classifier_inferencing_categories) / sizeof(ei_classifier_inferencing_categories[0]));
+
+    
 }
 
 /**
@@ -159,7 +176,7 @@ void loop()
             break;
         }
 
-        ei_printf("Taking photo...\n");
+        ei_printf("Looking for tracks...\n");
 
         if (ei_camera_init() == false) {
             ei_printf("ERR: Failed to initialize image sensor\r\n");
@@ -223,6 +240,19 @@ void loop()
             ei_printf("    No objects found\n");
         }
 #else
+        // Turn on LED if "Digi-Key" value is above a threshold
+        if (result.classification[0].value > 0.7) {
+          digitalWrite(GREEN, LOW);
+          delay(1000);  
+          digitalWrite(GREEN, HIGH);
+          delay(1000);
+        } else {
+          digitalWrite(RED, LOW);
+          delay(1000);  
+          digitalWrite(RED, HIGH);
+          delay(1000);
+        }
+
         for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
             ei_printf("    %s: %.5f\n", result.classification[ix].label,
                                         result.classification[ix].value);
