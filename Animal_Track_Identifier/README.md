@@ -5,6 +5,12 @@ Created for University of St. Thomas course SEIS-744 IoT with Machine Learning
 * [Edge Impulse project](https://studio.edgeimpulse.com/public/320629/latest)
 * [Presentation Slides](https://uofstthomasmn-my.sharepoint.com/:p:/g/personal/rowl7939_stthomas_edu/EffM6kaOjaZMifVnx6wy9I8BQNEKeKj0PuNOHd8G7RoPsg?e=YFjYBr)
 
+## Coyote Track Samples
+![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/04a02b96-6503-4f9c-81b7-afde042b1bc0)
+![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/4e1ef88b-c054-4222-aae8-3903c268bf33)
+![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/7fef4fdd-e1ee-4d09-ac90-2ff4e16d020a)
+![image](https://github.com/BetsyRowley/IoTwithML/assets/21369486/c574996a-c7ab-4991-9dc4-33a16058d0b4)
+
 ## How to Install
 
 1. You can run the model on your cell phone from the Edge Impulse Project link above
