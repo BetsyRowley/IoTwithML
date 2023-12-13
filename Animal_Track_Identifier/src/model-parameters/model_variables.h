@@ -29,7 +29,7 @@
 #include "edge-impulse-sdk/classifier/ei_model_types.h"
 #include "edge-impulse-sdk/classifier/inferencing_engines/engines.h"
 
-const char* ei_classifier_inferencing_categories[] = { "coyote", "tree", "unknown" };
+const char* ei_classifier_inferencing_categories[] = { "coyote3", "tree", "unknown" };
 
 uint8_t ei_dsp_config_15_axes[] = { 0 };
 const uint32_t ei_dsp_config_15_axes_size = 1;
@@ -90,11 +90,11 @@ const ei_model_performance_calibration_t ei_calibration = {
     0   /* Don't use flags */
 };
 
-const ei_impulse_t impulse_320629_16 = {
+const ei_impulse_t impulse_320629_17 = {
     .project_id = 320629,
     .project_owner = "Betsy",
     .project_name = "Animal Track Identifier",
-    .deploy_version = 16,
+    .deploy_version = 17,
 
     .nn_input_frame_size = 27648,
     .raw_sample_count = 9216,
@@ -131,6 +131,6 @@ const ei_impulse_t impulse_320629_16 = {
     .categories = ei_classifier_inferencing_categories
 };
 
-const ei_impulse_t ei_default_impulse = impulse_320629_16;
+const ei_impulse_t ei_default_impulse = impulse_320629_17;
 
 #endif // _EI_CLASSIFIER_MODEL_METADATA_H_
