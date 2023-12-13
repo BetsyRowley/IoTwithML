@@ -140,14 +140,14 @@ void setup()
 
     // initialize digital LEDs as outputs.
     pinMode(RED, OUTPUT);
-    //pinMode(BLUE, OUTPUT);
+    digitalWrite(RED, HIGH);
     pinMode(GREEN, OUTPUT);
-    //pinMode(LED_PWR, OUTPUT);
-    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(GREEN, HIGH);
+    //pinMode(LED_BUILTIN, OUTPUT);
 
     Serial.begin(115200);
     // comment out the below line to cancel the wait for USB connection (needed for native USB)
-    while (!Serial);
+    //while (!Serial);
     Serial.println("Animal Track Identifier Demo");
 
     // summary of inferencing settings (from model_metadata.h)
@@ -170,6 +170,12 @@ void loop()
 
     while(stop_inferencing == false) {
         ei_printf("\nStarting inferencing in 2 seconds...\n");
+
+        //Provide visual to user that inferencing has begun
+        // digitalWrite(LED_BUILTIN, HIGH);
+        // delay(1000);  
+        // digitalWrite(LED_BUILTIN, LOW);
+        // delay(1000);
 
         // instead of wait_ms, we'll wait on the signal, this allows threads to cancel us...
         if (ei_sleep(2000) != EI_IMPULSE_OK) {
@@ -240,7 +246,7 @@ void loop()
             ei_printf("    No objects found\n");
         }
 #else
-        // Turn on LED if "Digi-Key" value is above a threshold
+        // Turn on LED if "coyote" value is above a threshhold
         if (result.classification[0].value > 0.7) {
           digitalWrite(GREEN, LOW);
           delay(1000);  
