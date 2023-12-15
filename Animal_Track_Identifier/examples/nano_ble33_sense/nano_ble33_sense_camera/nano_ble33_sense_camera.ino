@@ -17,6 +17,7 @@
 /* Includes ---------------------------------------------------------------- */
 #include <Animal_Track_Identifier_inferencing.h>
 #include <Arduino_OV767X.h> //Click here to get the library: https://www.arduino.cc/reference/en/libraries/arduino_ov767x/
+#include <ChainableLED.h> 
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -27,12 +28,17 @@
 
 #define DWORD_ALIGN_PTR(a)   ((a & 0x3) ?(((uintptr_t)a + 0x4) & ~(uintptr_t)0x3) : a)
 
-//Define LED Lights
-#define RED 22     
-#define BLUE 24     
-#define GREEN 23
-#define LED_PWR 25
-#define LED_BUILTIN 13
+//Define Built in LED Lights
+// #define RED 22     
+// #define BLUE 24     
+// #define GREEN 23
+// #define LED_PWR 25
+// #define LED_BUILTIN 13
+
+//Define for Chainable LED
+#define NUM_LEDS  5
+
+ChainableLED leds(A6, A7, NUM_LEDS);
 
 /*
  ** NOTE: If you run into TFLite arena allocation issue.
@@ -139,10 +145,10 @@ void setup()
     // put your setup code here, to run once:
 
     // initialize digital LEDs as outputs.
-    pinMode(RED, OUTPUT);
-    digitalWrite(RED, HIGH);
-    pinMode(GREEN, OUTPUT);
-    digitalWrite(GREEN, HIGH);
+    // pinMode(RED, OUTPUT);
+    // digitalWrite(RED, HIGH);
+    // pinMode(GREEN, OUTPUT);
+    // digitalWrite(GREEN, HIGH);
     //pinMode(LED_BUILTIN, OUTPUT);
 
     Serial.begin(115200);
@@ -248,14 +254,18 @@ void loop()
 #else
         // Turn on LED if "coyote" value is above a threshhold
         if (result.classification[0].value > 0.7) {
-          digitalWrite(GREEN, LOW);
+          // digitalWrite(GREEN, LOW);
+          leds.setColorRGB(0, 0, 255, 0);
           delay(1000);  
-          digitalWrite(GREEN, HIGH);
+          // digitalWrite(GREEN, HIGH);
+          leds.setColorRGB(0, 0, 0, 0);
           delay(1000);
         } else {
-          digitalWrite(RED, LOW);
-          delay(1000);  
-          digitalWrite(RED, HIGH);
+          // digitalWrite(RED, LOW);
+          leds.setColorRGB(0, 255, 0, 0);
+          delay(1000);
+          leds.setColorRGB(0, 0, 0, 0);  
+          // digitalWrite(RED, HIGH);
           delay(1000);
         }
 
